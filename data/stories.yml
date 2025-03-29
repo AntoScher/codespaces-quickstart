@@ -28,7 +28,25 @@ stories:
   - action: utter_did_that_help
   - intent: deny
   - action: utter_goodbye
+
 - story: respond to ask_model
   steps:
-    - intent: ask_model
-    - action: utter_ask_model
+  - intent: ask_model
+  - action: utter_ask_model
+
+- story: Создание события
+  steps:
+  - intent: create_event
+  - action: action_ask_event_title
+  - intent: inform
+    entities:
+      - event_title  # Исправлено: убрано конкретное значение
+  - action: action_ask_date
+  - intent: inform
+    entities:
+      - date         # Исправлено: формат без значения
+  - action: action_ask_time
+  - intent: inform
+    entities:
+      - time         # Исправлено: только имя сущности
+  - action: action_create_calendar_event

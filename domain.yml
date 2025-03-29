@@ -10,6 +10,28 @@ intents:
   - bot_challenge
   - ask_model
 
+entities:  # Добавлена секция entities
+  - event_title
+  - date
+  - time
+
+slots:
+  event_title:
+    type: text
+    mappings:  # Добавлены обязательные mappings
+      - type: from_entity
+        entity: event_title
+  date:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: date
+  time:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: time
+
 responses:
   utter_greet:
     - text: "Hey! How are you?"
@@ -30,15 +52,6 @@ responses:
 actions:
   - action_create_calendar_event
 
-slots:
-  event_title:
-    type: text
-  date:
-    type: text
-  time:
-    type: text
-
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
-

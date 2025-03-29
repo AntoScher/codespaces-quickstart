@@ -79,9 +79,8 @@ nlu:
     - unhappy
     - not good
     - not very good
-    - extremly sad
-    - so saad
-    - so sad
+    - extremely sad  # Исправлено: было "extremly"
+    - so sad         # Исправлено: было "so saad"
 
 - intent: bot_challenge
   examples: |
@@ -89,8 +88,11 @@ nlu:
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
+
 - intent: ask_model
   examples: |
     - What is your model?
     - Can you tell me about your model?
     - What kind of bot are you?
+    - How were you created?     # Добавлен пример для разнообразия
+    - What technology do you use?
