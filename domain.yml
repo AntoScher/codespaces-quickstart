@@ -27,6 +27,18 @@ responses:
   utter_ask_model:
     - text: "I am a chatbot built using Rasa. My model is trained to understand your inputs and respond accordingly."
 
+actions:
+  - action_create_calendar_event
+
+slots:
+  event_title:
+    type: text
+  date:
+    type: text
+  time:
+    type: text
+
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
+
